@@ -1,0 +1,14 @@
+image: mcr.microsoft.com/dotnet/sdk:3.1
+
+tasks:
+  - name: Restore & Build
+    init: |
+      dotnet dev-certs https 
+      dotnet restore
+      dotnet build
+  - name: Run
+    command: dotnet run
+
+vscode:
+  extensions:
+    - muhammad-sammy.csharp
